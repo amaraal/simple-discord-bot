@@ -1,0 +1,11 @@
+{
+	"name": "top-bot",
+	"version": "0.0.1",
+	"description": "Does almost nothing",
+	"main": "bot.js",
+	"author": "Pedro A.",
+	"dependencies": {
+		"discord.io": "github:woor/discord.io#gateway_v6",
+		"winston": "^2.4.2"
+	}
+}
