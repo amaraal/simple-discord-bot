@@ -22,20 +22,20 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     // It will listen for messages that will start with `!`
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
-        var cmd = args[0];
+        var cmd = args[1];
        
         args = args.splice(1);
         switch(cmd) {
             // !ping
-            case '3AM':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'O HORARIO MAIS MALVADO DE TODOS >:D!'
-                });
             case 'URMOMGAY':
                 bot.sendMessage({
                     to: channelID,
                     message: 'NO U!!1!1!!11!!'
+                });
+            case '3AM':
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'O HORARIO MAIS MALVADO DE TODOS >:D!'
                 });
             break;
             // Just add any case commands if you want to..
