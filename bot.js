@@ -32,7 +32,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     message: 'O HORARIO MAIS MALVADO DE TODOS >:D!'
                 });
-            case 'UR MOM GAY':
+            case 'URMOMGAY':
                 bot.sendMessage({
                     to: channelID,
                     message: 'NO U!!1!1!!11!!'
