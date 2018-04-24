@@ -18,7 +18,7 @@ bot.on('ready', function (evt) {
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
-var evil = schedule.scheduleJob({hour: 16, minute: 59}, function(){
+var evil = schedule.scheduleJob({hour: 17, minute: 12, day: *}, function(){
     bot.sendMessage({
         to: channelID,
         message: '3AM, O HORARIO MAIS MALVADO DE TODOS >:D!'
