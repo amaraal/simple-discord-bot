@@ -23,6 +23,7 @@ var evil = schedule.scheduleJob('40 17 * * *', function(){
         to: "310915980912099329",
         message: '3AM, O HORARIO MAIS MALVADO DE TODOS >:D!'
     });
+    logger.info('3AM');
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
