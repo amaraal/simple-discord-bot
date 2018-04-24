@@ -31,11 +31,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 bot.sendMessage({
                     to: channelID,
                     message: 'NO U!!1!1!!11!!'
+                    break;
                 });
             case '3AM':
                 bot.sendMessage({
                     to: channelID,
                     message: 'O HORARIO MAIS MALVADO DE TODOS >:D!'
+                    break;
                 });
             break;
             // Just add any case commands if you want to..
