@@ -20,8 +20,8 @@ bot.on('ready', function (evt) {
 });
 var evil = schedule.scheduleJob('*/5 * * * *', function(){
     bot.sendMessage({
-        to: "310915980912099329",
-        message: '3AM, O HORARIO MAIS MALVADO DE TODOS >:D!'
+        to: "438438329449578496",
+        message: '@236263074456272897'
     });
     logger.info('3AM');
 });
