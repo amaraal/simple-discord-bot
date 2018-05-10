@@ -72,7 +72,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: userID,
                     message: "frick off mate"
                 })
-                logger.info("FRICKME SENT TO: userID")
+                logger.info("FRICKME SENT TO:"+userID)
                 break;
             // Just add any case commands if you want to..
          }
