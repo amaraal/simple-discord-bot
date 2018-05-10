@@ -28,7 +28,7 @@ var evil = schedule.scheduleJob('0 3 * * *', function(){
 
 var reminder = schedule.scheduleJob('*/5 * 10 * *', function(){
     bot.sendMessage({
-        to: "",
+        to: "310810416819208192",
         message: "NÃO ESQUECE O LIVRO"
     });
     logger.info('REMINDER')
@@ -72,7 +72,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: userID,
                     message: "frick off mate"
                 })
-                logger.info("FRICKME SENT TO:" + userID)
+                logger.info("FRICKME SENT TO: userID")
                 break;
             // Just add any case commands if you want to..
          }
