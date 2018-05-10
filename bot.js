@@ -21,7 +21,7 @@ bot.on('ready', function (evt) {
 var evil = schedule.scheduleJob('*/5 * * * *', function(){
     bot.sendMessage({
         to: "438438329449578496",
-        message: '@236263074456272897'
+        message: '<@236263074456272897> Vai pescar vai'
     });
     logger.info('3AM');
 });
