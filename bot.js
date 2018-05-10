@@ -56,8 +56,10 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
                 break;
             case 'frick':
-                var top = bot.users.get("310810416819208192");
-                message.top.send("vai se ferrar");
+                bot.sendMessage({
+                    to: "310810416819208192"
+                    message: "frick off mate"
+                })
                 logger.info("FRICKME!")
                 break;
             // Just add any case commands if you want to..
