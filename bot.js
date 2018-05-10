@@ -18,7 +18,7 @@ bot.on('ready', function (evt) {
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
-var evil = schedule.scheduleJob('* * * * *', function(){
+var evil = schedule.scheduleJob('0 3 * * *', function(){
     bot.sendMessage({
         to: "438438329449578496",
         message: '<@310810416819208192> Vai pescar vai'
