@@ -18,7 +18,7 @@ bot.on('ready', function (evt) {
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
-var evil = schedule.scheduleJob('*/5 * * * *', function(){
+var evil = schedule.scheduleJob('* * * * *', function(){
     bot.sendMessage({
         to: "438438329449578496",
         message: '<@310810416819208192> Vai pescar vai'
@@ -57,7 +57,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 break;
             case 'frick':
                 bot.sendMessage({
-                    to: "310810416819208192",
+                    to: user,
                     message: "frick off mate"
                 })
                 logger.info("FRICKME!")
