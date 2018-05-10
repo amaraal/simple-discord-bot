@@ -57,7 +57,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 break;
             case 'frick':
                 bot.sendMessage({
-                    to: "310810416819208192"
+                    to: "310810416819208192",
                     message: "frick off mate"
                 })
                 logger.info("FRICKME!")
