@@ -20,8 +20,8 @@ bot.on('ready', function (evt) {
 });
 var evil = schedule.scheduleJob('0 3 * * *', function(){
     bot.sendMessage({
-        to: "438438329449578496",
-        message: '<@310810416819208192> Vai pescar vai'
+        to: "310915980912099329",
+        message: '3AM, O HORARIO MAIS MALVADO DE TODOS >:D!'
     });
     logger.info('3AM');
 });
@@ -57,7 +57,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 break;
             case 'frick':
                 bot.sendMessage({
-                    to: user,
+                    to: userID,
                     message: "frick off mate"
                 })
                 logger.info("FRICKME!")
