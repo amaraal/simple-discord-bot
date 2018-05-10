@@ -21,9 +21,17 @@ bot.on('ready', function (evt) {
 var evil = schedule.scheduleJob('0 3 * * *', function(){
     bot.sendMessage({
         to: "310915980912099329",
-        message: '3AM, O HORARIO MAIS MALVADO DE TODOS >:D!'
+        message: "AM, O HORARIO MAIS MALVADO DE TODOS >:D!"
     });
     logger.info('3AM');
+});
+
+var reminder = schedule.scheduleJob('*/5 * 10 * *', function(){
+    bot.sendMessage({
+        to: "",
+        message: "NÃO ESQUECE O LIVRO"
+    });
+    logger.info('REMINDER')
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
@@ -54,13 +62,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     message: evil.nextInvocation()
                 });
+                bot.sendMessage({
+                    to: channelID,
+                    message: reminder.nextInvocation()
+                });
                 break;
             case 'frick':
                 bot.sendMessage({
                     to: userID,
                     message: "frick off mate"
                 })
-                logger.info("FRICKME!")
+                logger.info("FRICKME SENT TO:" + userID)
                 break;
             // Just add any case commands if you want to..
          }
