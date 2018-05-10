@@ -21,7 +21,7 @@ bot.on('ready', function (evt) {
 var evil = schedule.scheduleJob('*/5 * * * *', function(){
     bot.sendMessage({
         to: "438438329449578496",
-        message: '<@236263074456272897> Vai pescar vai'
+        message: '<@310810416819208192> Vai pescar vai'
     });
     logger.info('3AM');
 });
@@ -54,6 +54,10 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     message: evil.nextInvocation()
                 });
+                break;
+            case 'frick':
+                message.top.send("vai se ferrar");
+                var top = client.users.get("236263074456272897");
                 break;
             // Just add any case commands if you want to..
          }
