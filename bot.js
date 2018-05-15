@@ -21,17 +21,9 @@ bot.on('ready', function (evt) {
 var evil = schedule.scheduleJob('0 3 * * *', function(){
     bot.sendMessage({
         to: "310915980912099329",
-        message: "AM, O HORARIO MAIS MALVADO DE TODOS >:D!"
+        message: "3AM, O HORARIO MAIS MALVADO DE TODOS >:D!"
     });
     logger.info('3AM');
-});
-
-var reminder = schedule.scheduleJob('*/5 * 10 * *', function(){
-    bot.sendMessage({
-        to: "310810416819208192",
-        message: "NÃO ESQUECE O LIVRO"
-    });
-    logger.info('REMINDER')
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
