@@ -29,7 +29,7 @@ var evil = schedule.scheduleJob('0 3 * * *', function(){
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    if (message.toLowerCase.includes("top")){
+    if (message.toLowerCase().includes("top")){
         bot.sendMessage({
             to: channelID,
             message: ':ok_hand:'
