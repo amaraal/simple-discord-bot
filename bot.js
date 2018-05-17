@@ -15,7 +15,7 @@ bot.on('message', msg =>{
         msg.reply(msg.author.avatarURL);
     }
     if (msg.content === 'como incorporar top?') {
-        const embed = new RichEmbed()
+        const embed = new Discord.RichEmbed()
         .setTitle('Um embed 👌')
         .setColor(0x08a384)
         .setDescription('ISSO SIM É QUALIDADE');
