@@ -1,6 +1,6 @@
-const { Client, MessageEmbed } = require('discord.js');
-const bot = new Client();
-const token = 'NDM3Nzg2MzMzNjc5OTc2NDQ4.DcEhmg.WjurPxHZL9W9QFdEJd_sSMMCWF0';
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+const token = 'NDM3Nzg2MzMzNjc5OTc2NDQ4.DcEhmg.WjurPxHZL9W9QFdEJd_sSMMCWF0'; 
 
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
@@ -15,7 +15,7 @@ bot.on('message', msg =>{
         msg.reply(msg.author.avatarURL);
     }
     if (msg.content === 'como incorporar top?') {
-        const embed = new MessageEmbed()
+        const embed = new RichEmbed()
         .setTitle('Um embed 👌')
         .setColor(0x08a384)
         .setDescription('ISSO SIM É QUALIDADE');
