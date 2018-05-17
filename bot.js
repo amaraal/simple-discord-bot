@@ -1,5 +1,5 @@
 const { Client, MessageEmbed } = require('discord.js');
-const bot = new Discord.Client();
+const bot = new Client();
 const token = 'NDM3Nzg2MzMzNjc5OTc2NDQ4.DcEhmg.WjurPxHZL9W9QFdEJd_sSMMCWF0';
 
 bot.on('ready', () => {
