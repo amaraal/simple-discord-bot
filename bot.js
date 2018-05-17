@@ -9,7 +9,7 @@ bot.on('ready', () => {
 });
 
 var evil = schedule.scheduleJob('15 15 * * *', function(){
-    guildObj.defaultChannel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
+    bot.channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
     //channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
     console.log('3AM');
 });
