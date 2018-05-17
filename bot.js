@@ -19,7 +19,7 @@ bot.on('ready', () => {
 bot.on('message', msg =>{
     
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
-    const args = msg.content.slice(prefix.lenght).split(' ')
+    const args = msg.content.slice(prefix.lenght).split(' ');
     const command = args.shift().toLowerCase();
     
     if (msg.content.startsWith(command === 'ping')) {
@@ -33,9 +33,9 @@ bot.on('message', msg =>{
     }   
     if (command === 'args-info') {
         if (!args.length) {
-            return msg.channel.send('Voce não deu nenhum argumento! <@${msg.author.id}>')
+            return msg.channel.send('Voce não deu nenhum argumento! <@${msg.author.id}>');
         }
-        msg.channel.send(`Comando: ${command}\nArgumentos: ${args}`)
+        msg.channel.send(`Comando: ${command}\nArgumentos: ${args}`);
     }
 });
 
