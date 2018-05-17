@@ -19,7 +19,7 @@ bot.on('ready', () => {
 bot.on('message', msg =>{
     
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
-    const args - msg.content.slice(prefix.lenght).split(' ')
+    const args = msg.content.slice(prefix.lenght).split(' ')
     const command = args.shift().toLowerCase();
     
     if (msg.content.startsWith(command === 'ping')) {
