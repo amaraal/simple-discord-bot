@@ -17,26 +17,32 @@ bot.on('ready', () => {
 //});
 
 bot.on('message', msg =>{
-    
+    console.log(`Antes teste`);
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
     
     const args = msg.content.slice(prefix.lenght).split(' ');
     const command = args.shift().toLowerCase();
+    console.log(`Depois teste`);
     
     if (command === 'ping') {
         msg.channel.send('Pong');
+        console.log(`ping`);
     }
     if (command === 'server') {
         msg.channel.send(`O nome desse server é ${msg.guild.name}\nEste server tem ${msg.guild.memberCount} usuarios\nFoi criado em ${msg.guild.createdAt}\nE é da região ${msg.guild.region}`);
+        console.log(`server`);
     }
     if (command === 'user-info') {
         msg.channel.send(`Seu nome de usuario é ${msg.author.username}\nSeu ID é ${msg.author.id}`);
+        console.log(`u-info`);
     }   
     if (command === 'args-info') {
         if (!args.length) {
             return msg.channel.send('Voce não deu nenhum argumento! <@${msg.author.id}>');
+            console.log(`arg-info fail`);
         }
         msg.channel.send(`Comando: ${command}\nArgumentos: ${args}`);
+        console.log(`arg-info`);
     }
 });
 
