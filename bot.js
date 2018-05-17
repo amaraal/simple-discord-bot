@@ -8,7 +8,7 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: 'in a working site' }, status: 'idle'}).then(console.log);
 });
 
-var evil = schedule.scheduleJob('13 15 * * *', function(){
+var evil = schedule.scheduleJob('15 15 * * *', function(){
     guildObj.defaultChannel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
     //channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
     console.log('3AM');
