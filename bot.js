@@ -1,7 +1,7 @@
+const config = require('./config.json');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 var schedule = require('node-schedule');
-const token = 'NDM3Nzg2MzMzNjc5OTc2NDQ4.DcEhmg.WjurPxHZL9W9QFdEJd_sSMMCWF0'; 
 
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
@@ -49,4 +49,4 @@ bot.on('guildMemberRemove', member => {
     channel.send(`Eu não gostava de você mesmo, ${member}!`);
 });
 
-bot.login(token);
+bot.login(config.token);
