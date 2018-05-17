@@ -9,9 +9,10 @@ bot.on('ready', () => {
 });
 
 var evil = schedule.scheduleJob('15 15 * * *', function(){
-    bot.channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
+    console.log('whocares')
+    //console.log('3AM');
+    channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
     //channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
-    console.log('3AM');
 });
 
 bot.on('message', msg =>{
