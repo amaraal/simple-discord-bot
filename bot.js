@@ -8,7 +8,7 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: 'in a working site' }, status: 'idle'}).then(console.log);
 });
 
-var evil = schedule.scheduleJob('0 3 * * *', function(){
+var evil = schedule.scheduleJob('3 15 * * *', function(){
     bot.channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
     console.log('3AM');
 });
@@ -28,7 +28,7 @@ bot.on('message', msg =>{
         msg.channel.send(embed);
     }
     if (msg.content === 'quando voce vai trabalhar?') {
-        msg.reply(`Vou trabalhar às ${evil.nextInvocation()}`)
+        msg.reply(`Vou trabalhar em: ${evil.nextInvocation()}`)
     }
 });
 
