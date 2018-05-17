@@ -31,7 +31,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     // It will listen for messages that will start with `!`
     var strr = message.split("").reverse().join("");
     
-    if ((message.toLowerCase().replace(" ", "").includes("top")) || (rrts.toLowerCase().replace(" ","").includes("top"))){
+    if ((message.toLowerCase().replace(" ", "").includes("top")) || (strr.toLowerCase().replace(" ","").includes("top"))){
         bot.sendMessage({
             to: channelID,
             message: ':ok_hand:'
