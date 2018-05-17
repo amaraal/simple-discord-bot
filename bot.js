@@ -4,6 +4,7 @@ const token = 'NDM3Nzg2MzMzNjc5OTc2NDQ4.DcEhmg.WjurPxHZL9W9QFdEJd_sSMMCWF0';
 
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
+    bot.user.setPresence({ activity: { name: 'in a working site'}, status: 'idle'}).then(console.log).catch(console.error);
 });
 
 bot.on('message', msg =>{
