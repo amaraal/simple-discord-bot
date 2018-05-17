@@ -1,10 +1,16 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+var schedule = require('node-schedule');
 const token = 'NDM3Nzg2MzMzNjc5OTc2NDQ4.DcEhmg.WjurPxHZL9W9QFdEJd_sSMMCWF0'; 
 
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
     bot.user.setPresence({ game: { name: 'in a working site' }, status: 'idle'}).then(console.log);
+});
+
+var evil = schedule.scheduleJob('0 3 * * *', function(){
+    bot.channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
+    console.log('3AM');
 });
 
 bot.on('message', msg =>{
@@ -21,12 +27,20 @@ bot.on('message', msg =>{
         .setDescription('ISSO SIM É QUALIDADE');
         msg.channel.send(embed);
     }
+    if (msg.content === 'quando voce vai trabalhar?') {
+        msg.reply(`Vou trabalhar às ${evil.nextInvocation()}`)
+    }
 });
 
 bot.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.find('name', 'member-log')
+    const channel = member.guild.channels.find('name', 'member-log');
     if (!channel) return;
-    channel.send(`Bem vindo ao servidor, ${member}`)
-})
+    channel.send(`Bem vindo ao servidor, ${member}`);
+});
+bot.on('guildMemberRemove', member => {
+    const channel = member.guild.channels.find('name', 'member-log');
+    if (!channel) return;
+    channel.send(`Eu não gostava de você mesmo, ${member}!`);
+});
 
 bot.login(token);
