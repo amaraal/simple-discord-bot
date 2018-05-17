@@ -1,14 +1,14 @@
 const { prefix, token } = require('./config.json');
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+const client = new Discord.Client();
 var schedule = require('node-schedule');
 
-bot.on('ready', () => {
+client.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
     bot.user.setPresence({ game: { name: 'in a working site' }, status: 'idle'});
 });
 
-bot.on('message', message => {
+client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(' ');  
