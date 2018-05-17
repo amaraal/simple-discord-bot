@@ -4,8 +4,8 @@ const client = new Discord.Client();
 var schedule = require('node-schedule');
 
 client.on('ready', () => {
-    console.log(`Logged in as ${bot.user.tag}!`);
-    bot.user.setPresence({ game: { name: 'in a working site' }, status: 'idle'});
+    console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setPresence({ game: { name: 'in a working site' }, status: 'idle'});
 });
 
 client.on('message', message => {
