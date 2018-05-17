@@ -8,15 +8,18 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: 'in a working site' }, status: 'idle'});
 });
 
-bot.on('message', msg => {
-    if (!msg.content.startsWith(prefix) || msg.author.bot) return;
-    
-    const args = msg.content.slice(prefix.lenght).split(' ');
+bot.on('message', message => {
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+    const args = message.content.slice(prefix.length).split(' ');  
     const command = args.shift().toLowerCase();
     
-    if (command === 'ping') {
-        msg.channel.send('Pong');
-    }
+    if (command === 'args-info') {
+        if (!args.length) {
+            return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        }
+    message.channel.send(`Command name: ${command}\nArguments: ${args}`);
+}
 
 });
 
