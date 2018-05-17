@@ -8,8 +8,8 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: 'in a working site' }, status: 'idle'}).then(console.log);
 });
 
-var evil = schedule.scheduleJob('15 15 * * *', function(){
-    console.log('whocares')
+var evil = schedule.scheduleJob('34 15 * * *', function(){
+    console.log('whocares');
     //console.log('3AM');
     channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
     //channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
