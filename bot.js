@@ -33,7 +33,7 @@ bot.on('message', msg =>{
     }   
     if (command === 'args-info') {
         if (!args.length) {
-            return msg.reply('Voce não deu nenhum argumento!')
+            return msg.channel.send('Voce não deu nenhum argumento! <@${msg.author.id}>')
         }
         msg.channel.send(`Comando: ${command}\nArgumentos: ${args}`)
     }
