@@ -18,7 +18,7 @@ bot.on('message', msg =>{
         const embed = new MessageEmbed()
         .setTitle('Um embed 👌')
         .setColor(0x08a384)
-        .setDescription('ISSO SIM É QUALIDADE')
+        .setDescription('ISSO SIM É QUALIDADE');
         msg.channel.send(embed);
     }
 });
