@@ -3,10 +3,6 @@ var bot = new Discord.Client();
 var auth = require('./auth.json');
 var schedule = require('node-schedule');
 // Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(logger.transports.Console, {
-    colorize: true
-});
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}`);
 });
@@ -16,7 +12,7 @@ var evil = schedule.scheduleJob('0 3 * * *', function(){
         to: "310915980912099329",
         message: "3AM, O HORARIO MAIS MALVADO DE TODOS >:D!"
     });
-    logger.info('3AM');
+    console.log('3AM');
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
@@ -70,7 +66,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: userID,
                     message: "frick off mate"
                 })
-                logger.info("FRICKME SENT TO:"+user)
+                console.log("FRICKME SENT TO:"+user)
                 break;
             // Just add any case commands if you want to..
          }
