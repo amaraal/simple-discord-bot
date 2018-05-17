@@ -1,5 +1,5 @@
 var Discord = require('discord.js');
-var logger = require('winston');
+var bot = new Discord.Client();
 var auth = require('./auth.json');
 var schedule = require('node-schedule');
 // Configure logger settings
@@ -7,17 +7,10 @@ logger.remove(logger.transports.Console);
 logger.add(logger.transports.Console, {
     colorize: true
 });
-logger.level = 'debug';
-// Initialize Discord Bot
-var bot = new Discord.Client({
-   token: auth.token,
-   autorun: true
+bot.on('ready', () => {
+    console.log(`Logged in as ${bot.user.tag}`);
 });
-bot.on('ready', function (evt) {
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
-});
+
 var evil = schedule.scheduleJob('0 3 * * *', function(){
     bot.sendMessage({
         to: "310915980912099329",
@@ -83,3 +76,4 @@ bot.on('message', function (user, userID, channelID, message, evt) {
          }
      }
 });
+client.login('auth');
