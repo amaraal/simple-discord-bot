@@ -32,6 +32,9 @@ bot.on('message', msg =>{
     if (msg.content === 'quando voce vai trabalhar?') {
         msg.reply(`Vou trabalhar em: ${evil.nextInvocation()}`)
     }
+    if (msg.content === 'alo') {
+        msg.reply('DANASE VC')
+    }
 });
 
 bot.on('guildMemberAdd', member => {
