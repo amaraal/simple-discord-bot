@@ -14,6 +14,19 @@ bot.on('message', msg =>{
     if (msg.content === 'qual meu avatar seu lixo?') {
         msg.reply(msg.author.avatarURL);
     }
+    if (msg.content === 'como incorporar top?') {
+        const embed = new MessageEmbed()
+        .setTitle('Um embed 👌')
+        .setColor(0x08a384)
+        .setDescription('ISSO SIM É QUALIDADE')
+        msg.channel.send(embed);
+    }
 });
+
+bot.on('guildMemberAdd', member => {
+    const channel = member.guild.channels.find('name', 'member-log')
+    if (!channel) return;
+    channel.send(`Bem vindo ao servidor, ${member}`)
+})
 
 bot.login(token);
