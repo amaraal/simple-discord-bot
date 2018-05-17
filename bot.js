@@ -21,7 +21,7 @@ bot.on('message', msg =>{
         msg.channel.send('Pong');
     }
     if (msg.content.startsWith(`${prefix}server`)) {
-        msg.channel.send(`O nome desse server é ${msg.guild.name}\nEste server tem ${msg.guild.memberCount}\nFoi criado em ${msg.guild.createdAt}\nE é da região ${msg.guild.region}`);
+        msg.channel.send(`O nome desse server é ${msg.guild.name}\nEste server tem ${msg.guild.memberCount} usuarios\nFoi criado em ${msg.guild.createdAt}\nE é da região ${msg.guild.region}`);
     }
     if (msg.content.startsWith(`${prefix}user-info`)){
         msg.channel.send(`Seu nome de usuario é ${msg.author.username}\nSeu ID é ${msg.author.id}`);
