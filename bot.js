@@ -5,13 +5,14 @@ const token = 'NDM3Nzg2MzMzNjc5OTc2NDQ4.DcEhmg.WjurPxHZL9W9QFdEJd_sSMMCWF0';
 
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
-    bot.user.setPresence({ game: { name: 'in a working site' }, status: 'idle'}).then(console.log);
+    bot.user.setPresence({ game: { name: 'in a working site' }, status: 'idle'});
+    const channelObject = bot.channels.get("310915980912099329")
 });
 
-var evil = schedule.scheduleJob('0 16 * * *', function(){
+var evil = schedule.scheduleJob('27 16 * * *', function(){
     console.log('whocares');
     //console.log('3AM');
-    channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
+    channelObject.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
     //channel.send('3AM, O HORARIO MAIS MALVADO DE TODOS!');
 });
 
