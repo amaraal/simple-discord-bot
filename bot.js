@@ -36,12 +36,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         //  to: channelID,
         //  message: ':ok_hand:'
         //});
-        message.react(':ok_hand:');
-        message.react(':ok_hand::skin-tone-1:');
-        message.react(':ok_hand::skin-tone-2:');
-        message.react(':ok_hand::skin-tone-3:');
-        message.react(':ok_hand::skin-tone-4:');
-        message.react(':ok_hand::skin-tone-5:');
+        message.AddReaction(':ok_hand:');
+        //message.react(':ok_hand::skin-tone-1:');
+        //message.react(':ok_hand::skin-tone-2:');
+        //message.react(':ok_hand::skin-tone-3:');
+        //message.react(':ok_hand::skin-tone-4:');
+        //message.react(':ok_hand::skin-tone-5:');
     }
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
