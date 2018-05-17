@@ -29,13 +29,19 @@ var evil = schedule.scheduleJob('0 3 * * *', function(){
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    var strr = message.split("").reverse().join("");
+    var strr = message.split("").reverse().join("").replace(" ","");
     
-    if ((message.toLowerCase().replace(" ", "").includes("top")) || (strr.toLowerCase().replace(" ","").includes("top"))){
-        bot.sendMessage({
-            to: channelID,
-            message: ':ok_hand:'
-        });
+    if ((message.toLowerCase().replace(" ", "").includes("top")) || (strr.toLowerCase().includes("top"))){
+        //bot.sendMessage({
+        //  to: channelID,
+        //  message: ':ok_hand:'
+        //});
+        message.react(':ok_hand:');
+        message.react(':ok_hand::skin-tone-1:');
+        message.react(':ok_hand::skin-tone-2:');
+        message.react(':ok_hand::skin-tone-3:');
+        message.react(':ok_hand::skin-tone-4:');
+        message.react(':ok_hand::skin-tone-5:');
     }
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
