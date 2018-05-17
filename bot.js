@@ -20,12 +20,12 @@ client.on('message', message => {
         message.channel.send('BEEP BOOP I AM ROBOT');
     }
     if (command === 'about-me') {
-        message.channel.send('Seu nome é: ${message.author}\nSeu ID unico do discord é: ${message.author.id}')
+        message.channel.send(`Seu nome é: ${message.author}\nSeu ID unico do discord é: ${message.author.id}`)
     }
     if (command === 'about-server') {
-        message.channel.send('Este servidor se chama ${message.guild.name}\nEste servidor tem ${message.guild.memberCount} membros\nFoi criado em ${message.guild.createdAt}\nE é da região ${message.guild.region}')
+        message.channel.send(`Este servidor se chama ${message.guild.name}\nEste servidor tem ${message.guild.memberCount} membros\nFoi criado em ${message.guild.createdAt}\nE é da região ${message.guild.region}`)
     }
-    if (command === 'args-info') {
+    if (command === 'about-args') {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }
