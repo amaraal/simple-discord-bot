@@ -36,7 +36,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         //  to: channelID,
         //  message: ':ok_hand:'
         //});
-        message.AddReaction(':ok_hand:');
+        message.AddReaction({
+            channelID: channelID,
+            messageID: evt.d.id,
+            reaction: ":ok_hand:"
+        });
         //message.react(':ok_hand::skin-tone-1:');
         //message.react(':ok_hand::skin-tone-2:');
         //message.react(':ok_hand::skin-tone-3:');
