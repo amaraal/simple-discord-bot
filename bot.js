@@ -39,27 +39,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         bot.addReaction({
             channelID: channelID,
             messageID: evt.d.id,
-            reaction: "👌"
-        });
-        bot.addReaction({
-            channelID: channelID,
-            messageID: evt.d.id,
-            reaction: "👌🏻"
-        });
-        bot.addReaction({
-            channelID: channelID,
-            messageID: evt.d.id,
-            reaction: "👌🏼"
-        });
-        bot.addReaction({
-            channelID: channelID,
-            messageID: evt.d.id,
-            reaction: "👌🏾"
-        });
-        bot.addReaction({
-            channelID: channelID,
-            messageID: evt.d.id,
-            reaction: "👌🏿"
+            reaction: "👌👌🏻👌🏼👌🏾👌🏿"
         });
     }
     if (message.substring(0, 1) == '!') {
