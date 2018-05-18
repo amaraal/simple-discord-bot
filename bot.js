@@ -28,7 +28,7 @@ client.on('message', message => {
     if (command === 'about-args') {
         if (!args.length) {
             return message.channel.send(`Você não me deu nenhum argumento, ${message.author}!`);
-        } else if (args[0] === 'foo')0 {
+        } else if (args[0] === 'foo') {
           return message.channel.send('bar');
         }
 
