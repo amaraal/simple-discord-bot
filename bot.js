@@ -5,13 +5,13 @@ var schedule = require('node-schedule');
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setPresence({ game: { name: 'in a working site' }, status: 'idle'});
+    client.user.setPresence({ game: { name: 'BEING HEAVILY CODED AND MODIFIED' }, status: 'occupied'});
 });
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(' ');  
+    const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
     if (command === 'ping') {
         message.channel.send('Pong!');
@@ -27,10 +27,18 @@ client.on('message', message => {
     }
     if (command === 'about-args') {
         if (!args.length) {
-            return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+            return message.channel.send(`Você não me deu nenhum argumento, ${message.author}!`);
+        } else if (args[0] === 'foo')0 {
+          return message.channel.send('bar')
         }
-    message.channel.send(`Command name: ${command}\nArguments: ${args}`);
-}
+
+    message.channel.send(`Primeiro argumento: ${args[0]}`);
+    }
+    if (command === 'kick') {
+      const taggedUser = message.mentions.users.first();
+
+      message.channel.send(`Você tentou kicar o membro ${taggedUser}`)
+    }
 
 });
 
