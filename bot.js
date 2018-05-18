@@ -52,7 +52,7 @@ client.on("message", message => {
 
     message.channel.send(listaAvatares);
   }
-  if (command === "CHAT-MURDER"){
+  if (command === "chat-murder"){
     const amount = parseInt(args[0]);
 
     if (isNaN(amount)) {
