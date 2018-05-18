@@ -14,6 +14,8 @@
 
   about-args [args]
 
-  kick [user tag]
+  kickar [user tag]
 
   avatar [user tag] <---- blank for your avatar.
+
+  CHAT-MURDER [number of messages to DELETE]
