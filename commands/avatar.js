@@ -1,6 +1,9 @@
 module.exports = {
   name: "avatar",
   description: "Gets the user's avatar.",
+  args: false,
+  usage: "<target> (if blank the target is you.)",
+  guildOnly: true,
   execute(message, args){
     if (!message.mentions.users.size) {
       return message.channel.send(`Seu avatar é: ${message.author.displayAvatarURL}`);

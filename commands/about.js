@@ -1,10 +1,11 @@
 module.exports = {
   name: "about",
   description: "Gets info about stuff",
+  args: true,
+  usage: "<me/server/this-channel/him> (if using 'him' also tag someone to be the target.)",
+  guildOnly: true,
   execute(message, args){
-    if (!args.length) {
-      return message.channel.send(`Você não me deu nenhum argumento, ${message.author}!`);
-    } else if (args[0] === "foo") {
+    if (args[0] === "foo") {
       return message.channel.send("bar");
     } else if (args[0] === "me") {
       message.channel.send(`Seu nome é: ${message.author}\nSeu ID unico do discord é: ${message.author.id}`);
@@ -20,6 +21,8 @@ module.exports = {
         return `O nome é: ${user.username}\nSeu ID unico do discord é: ${user.id}`;
       });
       message.channel.send(usInf);
+    } else if (args [0] === "this-channel") {
+      message.channel.send(`Este canal foi criado em ${message.channel.createdAt}\nE seu id unico é: ${message.channel.id}`);
     }
   },
 };

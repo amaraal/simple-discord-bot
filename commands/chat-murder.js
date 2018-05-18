@@ -1,6 +1,9 @@
 module.exports = {
   name: "chat-murder",
   description: "Murders the chat.",
+  args: true,
+  usage: "<amount of messages to delete>",
+  guildOnly: true,
   execute(message, args){
     const amount = parseInt(args[0]);
 
