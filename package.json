@@ -1,7 +1,7 @@
 {
 	"name": "top-bot",
-	"version": "1.0.0",
-	"description": "Does almost nothing",
+	"version": "1.5.0",
+	"description": "Does almost something",
 	"main": "bot.js",
 	"author": "Pedro A.",
 	"dependencies": {
