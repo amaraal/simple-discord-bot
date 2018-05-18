@@ -30,7 +30,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
     var strr = message.split("").reverse().join("").replace(" ","");
-    
+
     if ((message.toLowerCase().replace(" ", "").includes("top")) || (strr.toLowerCase().includes("top"))){
         //bot.sendMessage({
         //  to: channelID,
@@ -45,7 +45,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
-       
+
         args = args.splice(1);
         switch(cmd) {
             // !ping
@@ -53,7 +53,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 bot.sendMessage({
                     to: channelID,
                     message: 'NO U!!1!1!!11!!'
-                    
+
                 });
                 break;
             case '3AM':

@@ -9,13 +9,11 @@
   Current commands are
   ping,
   beep,
-  about-me
-  about-server
 
-  about-args [args]
+  about [me/server] [him] <--- in the last case also put mention an user.
 
-  kickar [user tag]
+  kick [user tag] //doesn't really kick them.
 
   avatar [user tag] <---- blank for your avatar.
 
-  CHAT-MURDER [number of messages to DELETE]
+  chat-murder [number of messages to DELETE]
