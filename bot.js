@@ -42,7 +42,7 @@ client.on("message", message => {
     message.channel.send(`Você tentou kicar o membro ${taggedUser}`);
   }
   if (command === "avatar") {
-    if (!message.mentions.user.size) {
+    if (!message.mentions.users.size) {
       return message.channel.send(`Seu avatar é: ${message.author.displayAvatarURL}`);
     }
 
