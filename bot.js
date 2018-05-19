@@ -15,7 +15,7 @@ for (const file of commandFiles) {
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: "BEING HEAVILY CODED AND MODIFIED" }, status: "occupied"});
+  client.user.setPresence({ game: { name: `Say 👌help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
 });
 
 client.on("message", message =>{
@@ -49,6 +49,30 @@ client.on("message", message =>{
     console.error(error);
     message.reply("there was an error while running this command!");
   }
+});
+
+client.on("guildMemberAdd", member => {
+  const channel = member.guild.channel.find("name", "member-log");
+  if (!channel) return;
+
+  channel.send(`Welcome to the server ${member}`);
+});
+
+client.on("guildMemberRemove", member => {
+  const channel = member.guild.channel.find("name", "member-log");
+  if (!channel) return;
+
+  channel.send(`${member} has left the server ;-;`);
+});
+
+client.on("guildDelete", guild => {
+  console.log(`I have been removed from the guild ${guild.name} which had ${guild.memberCount} members.`);
+  client.user.setPresence({ game: { name: `Say 👌help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
+});
+
+client.on("guildCreate", guild => {
+  console.log(`I joined a guild called ${guild.name}, it has ${guild.memberCount} members.`);
+  client.user.setPresence({ game: { name: `Say 👌help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
 });
 
 client.login(token);
