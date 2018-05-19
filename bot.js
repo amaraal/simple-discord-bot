@@ -1,10 +1,10 @@
 const fs = require("fs");
 const Discord = require("discord.js");
+const client = new Discord.Client();
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: `Say 👌help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
 });
-const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const { token } = require("./config.json");
 const commandFiles = fs.readdirSync("./commands");
