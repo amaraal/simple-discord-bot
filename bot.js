@@ -71,6 +71,8 @@ client.on("guildDelete", guild => {
 });
 
 client.on("message", message =>{
+  const guildConf = client.settings.get(message.guild.id);
+  
   if (!message.content.startsWith(guildConf.prefix) || message.author.bot) return;
 
   const args = message.content.slice(guildConf.prefix.length).split(/ +/);
@@ -78,7 +80,6 @@ client.on("message", message =>{
 
   const command = client.commands.get(commandName);
 
-  const guildConf = client.settings.get(message.guild.id);
 
   if (command.guildOnly && message.channel.type != "text") {
     return message.reply("This command doesn't work here.");
