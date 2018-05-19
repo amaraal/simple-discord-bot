@@ -32,7 +32,7 @@ for (const file of commandFiles) {
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: `Say ${guildConf.prefix}help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
+  client.user.setPresence({ game: { name: `Say 👌help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
 });
 
 client.on("guildMemberAdd", member => {
@@ -59,13 +59,13 @@ client.on("guildMemberRemove", member => {
 
 client.on("guildDelete", guild => {
   console.log(`I have been removed from the guild ${guild.name} which had ${guild.memberCount} members.`);
-  client.user.setPresence({ game: { name: `Say ${guildConf.prefix}help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
+  client.user.setPresence({ game: { name: `Say 👌help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
   settings.delete(guild.id);
 });
 
 client.on("guildCreate", guild => {
   console.log(`I joined a guild called ${guild.name}, it has ${guild.memberCount} members.`);
-  client.user.setPresence({ game: { name: `Say ${guildConf.prefix}help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
+  client.user.setPresence({ game: { name: `Say 👌help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
   settings.set(guild.id, defaultSettings);
 });
 
