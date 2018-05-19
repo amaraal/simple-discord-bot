@@ -1,12 +1,20 @@
 const fs = require("fs");
 const Discord = require("discord.js");
-const { prefix, token } = require("./config.json");
+const Enmap = require("enmap");
+const EnmapLevel = require("enmap-level");
+const { prefix, token, ownerID } = require("./config.json");
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync("./commands");
 //var schedule = require("node-schedule");
+
+//if(message.author.id !== config.ownerID) return; <--- if only i can do the command.
+
+const myTable = new Enmap({provider: tableSource});
+const tableSource = new EnmapLevel({name: "myTable"});
+client.myTable = new Enmap({provider: myTable});
 
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
