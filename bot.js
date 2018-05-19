@@ -57,7 +57,7 @@ for (const file of commandFiles) {
 }
 
 client.on("message", message =>{
-  if(!message.guild || message.author.bot) return;
+  if(message.author.bot) return;
 
   const guildConf = settings.get(message.channel.guild.id);
 
@@ -86,7 +86,7 @@ client.on("message", message =>{
   if (!client.commands.has(commandName)) return;
 
   try {
-    command.execute(message, args);
+    command.execute(message, args, settings, guildConf);
   }
   catch (error) {
     console.error(error);
