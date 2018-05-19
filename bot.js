@@ -1,7 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js");
-const Enmap = require("enmap");
-const EnmapLevel = require("enmap-level");
+
 const { prefix, token, ownerID } = require("./config.json");
 
 const client = new Discord.Client();
@@ -12,9 +11,10 @@ const commandFiles = fs.readdirSync("./commands");
 
 //if(message.author.id !== config.ownerID) return; <--- if only i can do the command.
 
-const myTable = new Enmap({provider: tableSource});
-const tableSource = new EnmapLevel({name: "myTable"});
-client.myTable = new Enmap({provider: myTable});
+const Enmap = require("enmap");
+const EnmapLevel = require("enmap-level");
+const settings = new Enmap({provider: new EnmapLevel({name:"settings"})});
+
 
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
