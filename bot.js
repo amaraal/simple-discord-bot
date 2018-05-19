@@ -52,17 +52,10 @@ client.on("message", message =>{
 });
 
 client.on("guildMemberAdd", member => {
-  const channel = member.guild.channel.find("name", "member-log");
+  const channel = member.guild.channels.find("name", "member-log");
   if (!channel) return;
 
   channel.send(`Welcome to the server ${member}`);
-});
-
-client.on("guildMemberRemove", member => {
-  const channel = member.guild.channel.find("name", "member-log");
-  if (!channel) return;
-
-  channel.send(`${member} has left the server ;-;`);
 });
 
 client.on("guildDelete", guild => {
@@ -73,6 +66,13 @@ client.on("guildDelete", guild => {
 client.on("guildCreate", guild => {
   console.log(`I joined a guild called ${guild.name}, it has ${guild.memberCount} members.`);
   client.user.setPresence({ game: { name: `Say 👌help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
+});
+
+client.on("guildMemberRemove", member => {
+  const channel = member.guild.channels.find("name", "member-log");
+  if (!channel) return;
+
+  channel.send(`${member} has left the server ;-;`);
 });
 
 client.login(token);
