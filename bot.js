@@ -37,7 +37,7 @@ client.on("ready", () => {
 
 client.on("guildMemberAdd", member => {
   const guildConf = settings.get(member.guild.id);
-  
+
   const channel = member.guild.channels.find("name", "member-log");
   if (!channel) return;
 
@@ -67,7 +67,7 @@ client.on("guildDelete", guild => {
 client.on("guildCreate", guild => {
   console.log(`I joined a guild called ${guild.name}, it has ${guild.memberCount} members.`);
   client.user.setPresence({ game: { name: `Say 👌help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
-  settings.set(guild.id, defaultSettings);
+  client.settings.set(guild.id, defaultSettings);
 });
 
 client.on("message", message =>{
