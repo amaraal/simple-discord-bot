@@ -45,7 +45,7 @@ client.on("guildMemberAdd", member => {
 
 client.on("guildMemberRemove", member => {
   const channel = member.guild.channels.find("name", "member-log");
-  const guildConf = client.settings.get(member.guild.id);
+  const guildConf = settings.get(member.guild.id);
   const goodbyeMessage = guildConf.goodbyeMessage.replace("{{user}}", member.user.tag);
   if (!channel) return;
   member.guild.channels.find("name", guildConf.welcomeChannel).send(goodbyeMessage).catch(console.error);
