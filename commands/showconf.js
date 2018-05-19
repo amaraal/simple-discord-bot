@@ -4,7 +4,7 @@ module.exports = {
   args: false,
   usage: false,
   guildOnly: true,
-  execute(message, args){
+  execute(message, args, settings, guildConf){
     let configKeys = "";
     Object.keys(guildConf).forEach(key =>{
       configKeys += `${key}  :  ${guildConf[key]}\n`;

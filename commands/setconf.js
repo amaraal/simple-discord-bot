@@ -4,7 +4,7 @@ module.exports = {
   args: true,
   usage: "<key> <value>",
   guildOnly: true,
-  execute(message, args){
+  execute(message, args, settings, guildConf){
     const adminRole = message.guild.roles.find("name", guildConf.adminRole);
 
     if(!adminRole || !message.member.has(adminRole.id)) return message.reply("only admins can do that!");
