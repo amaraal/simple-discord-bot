@@ -6,11 +6,11 @@ module.exports = {
   guildOnly: true,
   execute(message, args){
     if (!message.mentions.users.size) {
-      return message.channel.send(`Seu avatar é: ${message.author.displayAvatarURL}`);
+      return message.channel.send(`Your avatar is: ${message.author.displayAvatarURL}`);
     }
 
     const listaAvatares = message.mentions.users.map(user =>{
-      return `O avatar de ${user.username} é: ${user.displayAvatarURL}`;
+      return `${user.username}'s avatar is: ${user.displayAvatarURL}`;
     });
 
     message.channel.send(listaAvatares);

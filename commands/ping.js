@@ -1,6 +1,6 @@
 module.exports = {
   name: "ping",
-  description: "Ping!",
+  description: "Ping-Pong is ***___cool___***",
   args: false,
   usage: false,
   execute(message, args) {

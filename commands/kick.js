@@ -6,9 +6,9 @@ module.exports = {
   guildOnly: true,
   execute(message, args){
     if (!message.mentions.user.size) {
-      return message.reply("você precisa mencionar alguem para kickar!");
+      return message.reply("you need to tag someone to kick!");
     }
     const taggedUser = message.mentions.users.first();
-    message.channel.send(`Você tentou kickar o membro ${taggedUser}`);
+    message.channel.send(`You tried to kick ${taggedUser}\n...\nbut you failed miserably.`);
   },
 };

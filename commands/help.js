@@ -1,34 +1,34 @@
 const { prefix } = require("../config.json");
 module.exports = {
   name: "help",
-  description: "Faz uma lista dos comandos ou da informação especifica.",
+  description: "Gives ya some help!",
   usage: "[command name]",
   execute(message, args) {
     const { commands } = message.client;
     const data = [];
 
     if (!args.length) {
-      data.push("Estes são todos os meus comandos:");
+      data.push("These are all my commands:");
       data.push(commands.map(command => command.name).join(", "));
-      data.push(`\nVocê pode enviar \`${prefix}help [command name]\` para informação especifica dos comandos!`);
+      data.push(`\nSend \`${prefix}help [command name]\` for command especific help!`);
     }
     else {
       if (!commands.has(args[0])){
-        return message.reply("isso não é um comando válido!");
+        return message.reply("that isn't a valid command!");
       }
       const command = commands.get(args[0]);
 
       data.push(`**Nome:** ${command.name}`);
 
-      if (command.description) data.push(`**Descrição:** ${command.description}`);
-      if (command.usage) data.push(`**Uso:** ${prefix}${command.name} ${command.usage}`);
+      if (command.description) data.push(`**Description:** ${command.description}`);
+      if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
     }
     message.author.send(data, {split: true})
       .then(() => {
         if (message.channel.type !== "dm") {
-          message.channel.send("Eu te enviei uma DM com todos os meus comandos!");
+          message.channel.send("I have sent you a dm with all my commands!");
         }
       })
-      .catch(() => message.reply("parece que eu não posso te enviar DMs"));
+      .catch(() => message.reply("seems like I can't dm you."));
   },
 };

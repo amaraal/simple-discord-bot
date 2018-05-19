@@ -8,21 +8,21 @@ module.exports = {
     if (args[0] === "foo") {
       return message.channel.send("bar");
     } else if (args[0] === "me") {
-      message.channel.send(`Seu nome é: ${message.author}\nSeu ID unico do discord é: ${message.author.id}`);
+      message.channel.send(`Your name is: ${message.author}\nYour ID is: ${message.author.id}`);
     } else if (args[0] === "server") {
-      message.channel.send(`Este servidor se chama ${message.guild.name}\nEste servidor tem ${message.guild.memberCount} membros\nFoi criado em ${message.guild.createdAt}\nE é da região ${message.guild.region}`);
+      message.channel.send(`This guild is called ${message.guild.name}\nIt has ${message.guild.memberCount} members\nIt was created in ${message.guild.createdAt}\nIt's region is ${message.guild.region}`);
 
     } else if (args[0] === "him") {
       if (!message.mentions.users.size){
-        return message.reply("você precisa mencionar alguem para saber sobre essa(s) pessoa(s).");
+        return message.reply("you need to tag one or more people.");
       }
 
       const usInf = message.mentions.users.map(user =>{
-        return `O nome é: ${user.username}\nSeu ID unico do discord é: ${user.id}`;
+        return `His name is: ${user.username}\nHis id is: ${user.id}`;
       });
       message.channel.send(usInf);
     } else if (args [0] === "this-channel") {
-      message.channel.send(`Este canal foi criado em ${message.channel.createdAt}\nE seu id unico é: ${message.channel.id}`);
+      message.channel.send(`This channels was created in ${message.channel.createdAt}\nIt's ID is: ${message.channel.id}`);
     }
   },
 };

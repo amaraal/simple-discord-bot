@@ -27,14 +27,14 @@ client.on("message", message =>{
   const command = client.commands.get(commandName);
 
   if (command.guildOnly && message.channel.type != "text") {
-    return message.reply("Esse comando não funciona nas DMs!");
+    return message.reply("This command doesn't work here.");
   }
 
   if (command.args && !args.length) {
-    let reply = `Você não deu argumentos, ${message.author}!`;
+    let reply = `You didn't give arguments, ${message.author}!`;
 
     if (command.usage){
-      reply += `\nA usagem correta seria: \n${prefix}${commandName} ${command.usage}`;
+      reply += `\nThe correct usage would be: \n${prefix}${commandName} ${command.usage}`;
     }
 
     return message.channel.send(reply);
@@ -47,7 +47,7 @@ client.on("message", message =>{
   }
   catch (error) {
     console.error(error);
-    message.reply("houve um erro executando esse comando!");
+    message.reply("there was an error while running this command!");
   }
 });
 
