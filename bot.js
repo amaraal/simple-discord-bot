@@ -59,7 +59,7 @@ for (const file of commandFiles) {
 client.on("message", message =>{
   if(!message.guild || message.author.bot) return;
 
-  const guildConf = settings.get(message.guild.id);
+  const guildConf = settings.get(message.channel.guild.id);
 
   if (!message.content.startsWith(guildConf.prefix)) return;
 
