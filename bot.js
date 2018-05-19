@@ -36,10 +36,11 @@ client.on("ready", () => {
 });
 
 client.on("guildMemberAdd", member => {
+  const guildConf = settings.get(member.guild.id);
+  
   const channel = member.guild.channels.find("name", "member-log");
   if (!channel) return;
 
-  const guildConf = settings.get(member.guild.id);
 
   const welcomeMessage = guildConf.welcomeMessage.replace("{{user}}", member.user.tag);
 
