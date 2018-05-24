@@ -7,7 +7,10 @@ module.exports = {
     guildOnly: false,
     ownerOnly: false,
     async execute(message, args) {
-        const { body } = await snekfetch.get('https://aws.random.cat/meow');
+        const { body } = await snekfetch.get('https://aws.random.cat/meow').catch((err) => {
+			console.log(err);
+			message.reply("there was an error running this command.");
+		});
 
         message.channel.send(body.file);
     },
