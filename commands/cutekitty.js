@@ -9,7 +9,7 @@ module.exports = {
     async execute(message, args) {
         const { body } = await snekfetch.get('https://aws.random.cat/meow').catch((err) => {
 			console.log(err);
-			message.reply("there was an error running this command.");
+			return message.reply("there was an error running this command.");
 		});
 
         message.channel.send(body.file);
