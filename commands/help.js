@@ -22,6 +22,14 @@ module.exports = {
 
       if (command.description) data.push(`**Description:** ${command.description}`);
       if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
+      message.author.send(data, {split: true})
+          .then(() => {
+              if (message.channel.type !== "dm") {
+                  message.channel.send("I have sent you a dm with help for that command!");
+              }
+          })
+          .catch(() => message.reply("seems like I can't dm you."));
+      return;
     }
     message.author.send(data, {split: true})
       .then(() => {
