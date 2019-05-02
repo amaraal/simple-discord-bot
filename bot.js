@@ -12,83 +12,6 @@ client.commands = new Discord.Collection();
 const { prefix, token, ytToken, ownerID } = require("./config.json");
 const commandFiles = fs.readdirSync("./commands");
 
-/*yt.setKey(ytToken);*/
-/*const req = require("request");*/
-/*const youtube = require("youtube-node");*/
-/*const ytdl = require("ytdl-core");*/
-/*const ffmpeg = require("ffmpeg-binaries");*/
-/*const yt = new youtube();*/
-
-//var schedule = require("node-schedule");
-//if(message.author.id !== config.ownerID) return; <--- if only i can do the command.
-//const Enmap = require("enmap");
-//const EnmapLevel = require("enmap-level");
-//const settings = new Enmap({provider: new EnmapLevel({name:"settings"})});
-//const defaultSettings = {
-//  prefix: "👌",
-//  modRole: "Mod",
-//  adminRole: "Admin",
-//  welcomeChannel: "welcome",
-//  welcomeMessage: "{{user}} has joined the server! :D",
-//  goodbyeMessage: "{{user}} has left the server! ;-;"
-//};
-
-/*
-function clean(text) {
-    if (typeof(text) === "string")
-        return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-    else
-        return text;
-}
-function getID(str, cb){
-    if (str.toLowerCase().indexOf("youtube.com") > -1) {
-        cb(getYouTubeID(str));
-    } else {
-        search_video(str, function (id) {
-            cb(id);
-        });
-    }
-}
-function addToQueue(strID) {
-    if (isYoutube(strID)){
-        queue.push(getYouTubeID(strID));
-    } else {
-        queue.push(strID)
-    }
-}
-function search_video(query, callback) {
-    yt.search(query, 2, function(error, result) {
-        if (error) {
-            console.log(error);
-        } else {
-            callback(result.items[0].id.videoId);
-        }
-    });
-}
-function playMusic(id, mess) {
-    // voiceChannel = mess.member.voiceChannel;
-    if(!mess.member.voiceChannel) {
-        return mess.reply("you need to join an voice channel first!");
-    }
-    mess.member.voiceChannel.join().then(function (connection) {
-       stream = ytdl("https://www.youtube.com/watch?v=" + id, {
-           filter: 'audioonly'
-       });
-       skipReq = 0;
-       skippers = [];
-
-       dispatcher = connection.playStream(stream);
-    });
-}
-
-var queue = [];
-var isPlaying = false;
-var dispatcher = null;
-var voiceChannel = null;
-var skipReq = 0;
-var skippers = [];
-*/
-
 client.on("guildCreate", guild => {
   console.log(`I joined a guild called ${guild.name}, it has ${guild.memberCount} members.`);
   client.user.setPresence({ game: { name: `Say 👌help | I am in ${client.guilds.size} guilds! ` }, status: "online"});
@@ -152,33 +75,7 @@ client.on("message", message =>{
 
     return message.channel.send(reply);
   }
-
-
-
-  /*if (message.content.startsWith(prefix + "play")) {
-
-      if (queue.length > 0 || isPlaying) {
-          getID(args.join(' '), function (id) {
-              addToQueue(id);
-              youtube.getById(id, function (err, result) {
-                  if (!err) message.reply(` added ${result.items[0].snippet.title} to queue.`)
-              });
-          });
-      } else {
-          isPlaying = true;
-          getID(args.join(' '), function (id) {
-              queue.push("placeholder");
-              if(!message.member.voiceChannel) {
-                  message.reply("Please join an voice channel first.")
-              }
-              youtube.getById(id, function (err, result) {
-                 if (!err) message.reply(` ${result.items[0].id} is now playing.`)
-              });
-              playMusic(id, message);
-          });
-      }
-  }*/
-
+  
   try {
     command.execute(message, args);
   }
