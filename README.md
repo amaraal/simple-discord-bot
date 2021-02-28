@@ -3,11 +3,13 @@
   
   This is <strong>very</strong> outdated
   
+  Made to be hosted in [Heroku](https://heroku.com)
+  
   
 ## Stuff used
 - [Node.js](https://nodejs.org)
 - [discord.js](https://discord.js.org/)
   
-The prefix is 👌
+The prefix is 👌 (change it in `config.json`)
 
 use the command `help` for a list of all commands.
