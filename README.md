@@ -9,6 +9,8 @@
 ## Stuff used
 - [Node.js](https://nodejs.org)
 - [discord.js](https://discord.js.org/)
+- [Cheerio](https://www.npmjs.com/package/cheerio)
+- [Snekfetch](https://www.npmjs.com/package/snekfetch)
   
 The prefix is 👌 (change it in `config.json`)
 
