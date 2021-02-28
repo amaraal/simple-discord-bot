@@ -9,4 +9,5 @@
 - [discord.js](https://discord.js.org/)
   
 The prefix is 👌
+
 use the command `help` for a list of all commands.
